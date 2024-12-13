@@ -3,14 +3,80 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8">
-    <title>My First Webpage</title>
+    <title>spicy cycling girls *</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png">
+    <script src="main.js"></script>
   </head>
 
-  <body>
-    <h1>Spicy</h1>
+  <!-- <header class="header">
+    <div>Header</div>
+  </header> -->
+
+  <body class="middle">
+    <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
+    <button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
+    <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+    <button class="tablink" onclick="openCity('Kontakt', this, 'teal')">Kontakt</button>
+
+    <div id="comingsoon">Coming soon</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </body>
+
+    <div id="London" class="tabcontent">
+     <h1>Über uns</h1>
+     <p>Über uns...</p>
+   </div>
+
+   <div id="Paris" class="tabcontent">
+     <h1>Events</h1>
+     <p>Events....</p>
+   </div>
+
+   <div id="Tokyo" class="tabcontent">
+     <h1>Mission/Goals</h1>
+     <p>Mission/Goals....</p>
+   </div>
+
+   <div id="Oslo" class="tabcontent">
+     <h1>FAQ</h1>
+     <p>FAQQQQQQQ.</p>
+   </div>
+
+   <div id="Kontakt" class="tabcontent">
+     <h1>Kontakt</h1>
+     <p>Kontakt.</p>
+   </div>
+
+   <canvas id="c" width="600" height="600" ></canvas>
+</body>
+
+<script>
+function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+  <!-- <footer class="footer">
+    <div>Footer</div>
+  </footer> -->
 </html>
