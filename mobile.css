@@ -1,0 +1,20 @@
+/* Smartphones */
+@media only screen and (max-width: 600px) {
+  .impressum-container {
+    width: 90%;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 600px) {
+  .impressum-container {
+    width: 75%;
+  }
+}
+
+/* Desktops */
+@media only screen and (min-width: 1000px) {
+  .impressum-container {
+    width: 50%;
+  }
+}

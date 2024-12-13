@@ -5,39 +5,6 @@ window.onload = function() {
 function runSketch() {
   'use strict';
 
-  // onmousemove = function(e){
-  // var mouseX = e.x;
-  // var mouseY = e.y;
-  //
-  // console.log(`mouse location = X: ${mouseX}, Y: ${mouseY}`);
-  // const gl = document.querySelector('#c').getContext('webgl');
-  //
-  // gl.enable(gl.SCISSOR_TEST);
-  //
-  // function drawRect(x, y, width, height, color) {
-  //   gl.scissor(x, y, width, height);
-  //   gl.clearColor(...color);
-  //   gl.clear(gl.COLOR_BUFFER_BIT);
-  // }
-  //
-  // var canvasWidth = document.getElementById('c').width;
-  // var canvasHeight = document.getElementById('c').height;
-  // for (let i = 0; i < 5; ++i) {
-  //   const x = rand(0, canvasWidth);
-  //   const y = rand(0, canvasHeight);
-  //   const width = rand(0, canvasWidth - x);
-  //   const height = rand(0, canvasHeight - y);
-  //   drawRect(x, y, width, height, [rand(1), rand(1), rand(1), 1]);
-  // }
-  //
-  // function rand(min, max) {
-  //   if (max === undefined) {
-  //     max = min;
-  //     min = 0;
-  //   }
-  //   return Math.random() * (max - min) + min;
-  // }
-  // }
   const gl = document.querySelector('#c').getContext('webgl');
 
   gl.enable(gl.SCISSOR_TEST);
@@ -67,6 +34,66 @@ function runSketch() {
   }
 
 }
+
+function renderImpressumCanvas() {
+	onmousemove = function(e){
+	var mouseX = e.x;
+	var mouseY = e.y;
+
+	console.log(`mouse location = X: ${mouseX}, Y: ${mouseY}`);
+	const gl = document.querySelector('#c2').getContext('webgl');
+
+	gl.enable(gl.SCISSOR_TEST);
+
+	function drawRect(x, y, width, height, color) {
+	  gl.scissor(x, y, width, height);
+	  gl.clearColor(...color);
+	  gl.clear(gl.COLOR_BUFFER_BIT);
+	}
+
+	var canvasWidth = document.getElementById('c2').width;
+	var canvasHeight = document.getElementById('c2').height;
+	for (let i = 0; i < 5; ++i) {
+	  const x = rand(0, canvasWidth);
+	  const y = rand(0, canvasHeight);
+	  const width = rand(0, canvasWidth - x);
+	  const height = rand(0, canvasHeight - y);
+	  drawRect(x, y, width, height, [rand(1), rand(1), rand(1), 1]);
+	}
+
+	function rand(min, max) {
+	  if (max === undefined) {
+	    max = min;
+	    min = 0;
+	  }
+	  return Math.random() * (max - min) + min;
+	}
+	}
+}
+
+function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 // 	var renderer, scene, camera, clock, stats, uniforms;
 //
 // 	init();
